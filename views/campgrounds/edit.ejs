@@ -1,0 +1,30 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 style="text-align:center;">Edit <%= cg.name %></h1>
+        </div>
+        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+            
+            <form action="/campgrounds/<%= cg._id %>?_method=PUT" method="POST">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="cg[name]" value="<%= cg.name %>">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="cg[image]" value="<%= cg.img %>">
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" rows="8" name="cg[desc]"><%= cg.desc %></textarea>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-large btn-primary btn-block">Submit</button>
+                </div>
+            </form>
+            
+            <p><a href="/campgrounds/<%= cg._id %>">Return to <%= cg.name %></a></p>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>
